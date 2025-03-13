@@ -16,7 +16,7 @@ public class InvalidVoucher {
     @FindBy(id = "depositBtnInline")
     WebElement deposit;
 
-    @FindBy(xpath = "//*[@id=\"app\"]/div/main/div/div/div/div[2]/div/div[2]/div[4]/div/div[3]/div[2]/div/div[2]/div/div/span[2]")//"(//span[contains(.,'1 Voucher - RI')])[2]")
+    @FindBy(className = "1 Voucher - RI")
     WebElement OneVoucher;
 
     @FindBy(xpath = "//input[contains(@id,'input-250')]")
@@ -28,7 +28,7 @@ public class InvalidVoucher {
     @FindBy(xpath = "(//div[contains(.,'Error: This voucher pin is invalid, please check that the voucher pin is correct and try again')])[24]")
     WebElement InvalidVoucherMessage;
 
-    @FindBy (xpath = "//*[@id=\"toast-da9adcca-970f-46a9-8c40-9c05958779b0\"]/div/div/div/div/div[3]/a[2]/img")
+    @FindBy (xpath = "//img[contains(@src,'button.svg')]")
     WebElement popup1;
 
     public InvalidVoucher(WebDriver driver) {
