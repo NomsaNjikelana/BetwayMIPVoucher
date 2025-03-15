@@ -14,10 +14,12 @@ public class ExtentReportManager {
     private static ExtentSparkReporter extentSparkReporter;
 
 
+
     public static ExtentReports extentSetUp(){
 
         extentReport = new ExtentReports();
         extentSparkReporter = new ExtentSparkReporter(new File(reportDir));
+        extentReport.attachReporter(extentSparkReporter);
 
         extentSparkReporter.config().setDocumentTitle("Betway");
         extentSparkReporter.config().setTheme(Theme.DARK);
