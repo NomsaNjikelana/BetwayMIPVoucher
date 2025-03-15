@@ -13,10 +13,15 @@ public class InvalidVoucher {
 
     WebDriver driver;
 
+    public InvalidVoucher(WebDriver driver) {
+        this.driver = driver;
+    }
+
+
     @FindBy(id = "depositBtnInline")
     WebElement deposit;
 
-    @FindBy(className = "1 Voucher - RI")
+    @FindBy(xpath = "//span[contains(text(),'1 Voucher - RI')]")
     WebElement OneVoucher;
 
     @FindBy(xpath = "//input[contains(@id,'input-250')]")
@@ -28,12 +33,9 @@ public class InvalidVoucher {
     @FindBy(xpath = "(//div[contains(.,'Error: This voucher pin is invalid, please check that the voucher pin is correct and try again')])[24]")
     WebElement InvalidVoucherMessage;
 
-    @FindBy (xpath = "//img[contains(@src,'button.svg')]")
+    @FindBy(xpath = "//img[contains(@src,'button.svg')]")
     WebElement popup1;
 
-    public InvalidVoucher(WebDriver driver) {
-        this.driver = driver;
-    }
 
     public void popUpWindow() {
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(popup1));

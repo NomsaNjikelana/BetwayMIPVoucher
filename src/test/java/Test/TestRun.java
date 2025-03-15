@@ -20,12 +20,9 @@ public class TestRun extends Base {
 
     @Test(dependsOnMethods = "LoginToBetway")
     public void InvalidVoucher() throws InterruptedException {
-        Thread.sleep(5000);
-        invalidVoucher.popUpWindow();
+        //invalidVoucher.popUpWindow();
         invalidVoucher.clickDeposit();
-        Thread.sleep(10000);
         invalidVoucher.clickOneVoucher();
-        Thread.sleep(10000);
         invalidVoucher.enterInvalidVoucherPin(InvalidVoucherPin);
         invalidVoucher.clickRedeemButton();
         invalidVoucher.verifyINvalidVoucherMessageIsDisplayed();

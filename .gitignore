@@ -23,6 +23,7 @@ target/
 .springBeans
 .sts4-cache
 Report/
+test-output/
 
 ### NetBeans ###
 /nbproject/private/
